@@ -1,6 +1,6 @@
 <div>
     <p>Hello dear visitor! How are you?</p>
-    <img src="{{user.photo}}" alt="{{user.firstName}}" />
+    <img src="{{user.photo}}" alt="avatar" />
     <h3>Prénom : {{user.firstName}}</h3> 
     <h3>Nom : {{user.name}}</h3>
     <h3 id="age2" *ngIf="isAgeVisible">Age : {{user.age}}</h3>
@@ -8,7 +8,7 @@
     <div>
         <input type="text" [(ngModel)]='user.quote' />
         <p>My favorite quote is "{{user.quote}}" but you can change it by filling the input :)</p>
-        <button (click)="hideAge()">{{isAgeVisible ? 'masquer' : 'afficher'}} âge</button>
+        <button (click)="toggleAge()">{{isAgeVisible ? 'masquer' : 'afficher'}} âge</button>
     </div>
     
 </div>
