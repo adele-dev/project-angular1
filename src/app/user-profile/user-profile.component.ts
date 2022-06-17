@@ -22,7 +22,7 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  hideAge(){
+  toggleAge(){
     this.isAgeVisible = !this.isAgeVisible;
     /*let h3age:HTMLElement | null = document.querySelector('#age');
     if(this.isAgeVisible){
