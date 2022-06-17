@@ -13,6 +13,7 @@ export class UserProfileComponent implements OnInit {
     age: 25,
     quote: 'Do the right thing',
     photo: 'https://randomuser.me/api/portraits/lego/2.jpg',
+    hobbies: ['kayak', 'chameau', 'moto', 'fer à cheval', 'stalking', 'char à voile', 'les aérosols'],
   };
 
   isAgeVisible:boolean = true;

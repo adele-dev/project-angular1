@@ -5,11 +5,17 @@
     <h3>Nom : {{user.name}}</h3>
     <h3 id="age2" *ngIf="isAgeVisible">Age : {{user.age}}</h3>
     <!-- <h3 id="age">Age : {{user.age}}</h3> -->
-    <div>
-        <input type="text" [(ngModel)]='user.quote' />
+    <div [ngStyle]="{backgroundColor:'salmon'}">
+        <input type="text" [ngStyle]="{width:'100%'}" [(ngModel)]='user.quote' />
         <p>My favorite quote is "{{user.quote}}" but you can change it by filling the input :)</p>
-        <button (click)="hideAge()">{{isAgeVisible ? 'masquer' : 'afficher'}} âge</button>
+        <button (click)="hideAge()" [ngStyle]="{backgroundColor: isAgeVisible? 'orange' : 'lightgreen'}">
+            {{isAgeVisible ? 'masquer' : 'afficher'}} âge
+        </button>
     </div>
+    <h3>Mes loisirs : </h3> 
+    <ul *ngFor="let hobby of user.hobbies">
+        <li>{{hobby}}</li>
+    </ul>
     
 </div>
 
