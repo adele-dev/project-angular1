@@ -11,12 +11,11 @@ export class UserProfileComponent implements OnInit {
     name: 'Doe',
     firstName:  'John',
     age: 25,
-    
     quote: 'Do the right thing',
     photo: 'https://randomuser.me/api/portraits/lego/2.jpg',
   };
 
-  isAgeVisible:boolean = false;
+  isAgeVisible:boolean = true;
 
   constructor() { }
 
@@ -24,6 +23,15 @@ export class UserProfileComponent implements OnInit {
   }
   hideAge(){
     this.isAgeVisible = !this.isAgeVisible;
+    /*let h3age:HTMLElement | null = document.querySelector('#age');
+    if(this.isAgeVisible){
+      h3age?.removeAttribute('hidden');
+      this.isAgeVisible=false;
+    }
+    else{
+      h3age?.setAttribute('hidden','');
+      this.isAgeVisible=true;
+    }*/
   }
 
 }
