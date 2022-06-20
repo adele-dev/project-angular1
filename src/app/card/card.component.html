@@ -1,0 +1,15 @@
+<div>
+    <div>
+    <img [src]="user1.photo" alt="photo" />
+    </div>
+    <p>Prénom : {{user1.firstname}} Nom : {{user1.name}}</p> 
+    <p>Age : {{user1.age}}</p>
+
+    <div>
+        <input type="text" [(ngModel)]='user1.quote' />
+        <p>{{user1.quote}}</p>
+        <button (click)="modif()">valider</button>
+    </div>
+
+    
+</div>
