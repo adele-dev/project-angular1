@@ -1,0 +1,15 @@
+<section>
+    <app-input-child 
+        *ngFor="let name of buttonList" 
+        [nameButton]="name" 
+        (valueToSend) = "recieveNameOfClickedButton($event)">
+    </app-input-child>
+    <p>
+        {{wichButtonMessage}}
+    </p>
+    <!--<app-input-child 
+    *ngFor="let color of colors; let i as index" 
+    [dataChild]="color">
+    </app-input-child>-->
+</section>
+
