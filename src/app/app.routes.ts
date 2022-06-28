@@ -5,7 +5,7 @@ import { UserComponent } from "./user/user.component";
 
 const ROUTES = [
     {path:'sign-up', component:SignUpComponent},
-    {path:'user', component:UserComponent},
+    {path:'user', component:UserProfileComponent},
     {path:'', component:UserProfileComponent}
 ];
 
