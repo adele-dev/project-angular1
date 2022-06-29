@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user.model';
+import { UserSignUp } from '../models/userSignUp.model';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,7 +8,7 @@ import { User } from '../models/user.model';
 })
 export class SignUpComponent implements OnInit {
 
-  user = new User("","","","");
+  userSignUp: UserSignUp = new UserSignUp("","","","");
   
   constructor() { }
 
@@ -16,7 +16,7 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(form: any):void{
-    console.log(this.user);
+    console.log(this.userSignUp);
     //console.log(form);
   }
 

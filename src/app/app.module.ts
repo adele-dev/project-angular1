@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,7 @@ import { InputChildComponent } from './input/input-child/input-child.component';
 import { MenuComponent } from './menu/menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ROUTES } from './app.routes';
+import { InscriptionFormComponent } from './inscription-form/inscription-form.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,14 @@ import { ROUTES } from './app.routes';
     InputChildComponent,
     MenuComponent,
     SignUpComponent,
+    InscriptionFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(ROUTES),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
