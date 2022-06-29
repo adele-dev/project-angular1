@@ -12,7 +12,6 @@ import { InputParentComponent } from './input/input-parent/input-parent.componen
 import { InputChildComponent } from './input/input-child/input-child.component';
 import { MenuComponent } from './menu/menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { UserComponent } from './user/user.component';
 import { ROUTES } from './app.routes';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { ROUTES } from './app.routes';
     InputChildComponent,
     MenuComponent,
     SignUpComponent,
-    UserComponent,
   ],
   imports: [
     BrowserModule,

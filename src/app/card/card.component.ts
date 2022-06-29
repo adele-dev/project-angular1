@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  user1: User = new User('ATOLL', 'Lola', 27, 'La vie est belle :)',
+  user1: UserCard = new UserCard('ATOLL', 'Lola', 27, 'La vie est belle :)',
   'https://placekitten.com/410/500');
-  user2: User = new User('NATOLLI', 'Mélanie', 18, 'Le chocolat c\'est la vie :)',
+  user2: UserCard = new UserCard('NATOLLI', 'Mélanie', 18, 'Le chocolat c\'est la vie :)',
   'https://placekitten.com/410/407');
 
   constructor() {
@@ -22,7 +22,7 @@ export class CardComponent implements OnInit {
 
 }
 
-class User{
+class UserCard{
   name: string;
   firstname: string;
   age: number;

@@ -1,2 +1,53 @@
-<p>Bonjour merci de vous connecter svp</p>
-<router-outlet></router-outlet>
+<p>Bonjour, vous pouvez vous enregistrer</p>
+<form (ngSubmit)="myForm.valid && onSubmit(myForm)" #myForm="ngForm">
+    <div>
+        <label for="firstname">Votre prénom</label>
+        <input type="text" name="firstname" [(ngModel)]="user.firstname" required 
+                #firstnameRef="ngModel" minlength="3" maxlength="15">
+    </div>
+    <div *ngIf="firstnameRef.errors && myForm.submitted">
+        <div class="green" *ngIf="firstnameRef.errors?.['required']">Le prénom doit être renseigné</div>
+        <div class="green" *ngIf="firstnameRef.errors?.['minlength']">Le prénom doit comporter au moins 3 caractères</div>
+        <div class="green" *ngIf="firstnameRef.errors?.['maxlength']">Le prénom ne doit pas dépasser 15 caractères</div>
+    </div>
+    <div>
+        <label for="lastname">Votre nom</label>
+        <input type="text" name="lastname" [(ngModel)]="user.lastname" required 
+                #lastnameRef="ngModel" minlength="3" maxlength="15">
+    </div>
+    <div *ngIf="lastnameRef.errors && myForm.submitted">
+        <div class="green" *ngIf="lastnameRef.errors?.['required']">Le nom doit être renseigné</div>
+        <div class="green" *ngIf="lastnameRef.errors?.['minlength']">Le nom doit comporter au moins 3 caractères</div>*
+        <div class="green" *ngIf="lastnameRef.errors?.['maxlength']">Le nom ne doit pas dépasser 15 caractères</div>
+    </div>
+    <div>
+        <label for="email">Votre mail</label>
+        <input type="email" name="email" [(ngModel)]="user.email" required email #emailRef="ngModel">
+    </div>
+    <div *ngIf="emailRef.errors && myForm.submitted">
+        <div class="green" *ngIf="emailRef.errors?.['required']">L'email est requis</div>
+        <div class="green" *ngIf="emailRef.errors?.['email']">L'email n'est invalide</div>
+    </div>
+    <div>
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" [(ngModel)]="user.password" required minlength="6" #passwordRef="ngModel">
+    </div>
+    <div *ngIf="passwordRef.errors && myForm.submitted">
+        <div class="green" *ngIf="passwordRef.errors?.['required']">
+            Le mot de passe est requis
+        </div>
+        <div class="green" *ngIf="passwordRef.errors?.['minlength']">
+            Votre mot de passe doit contenir au moins 6 caractères
+        </div>
+    </div>
+    <button type="submit">Valider</button>
+</form>
+<div></div>
+
+<!--<div>
+    Form submitted ? {{ myForm.submitted }}
+    Form valid ? {{ myForm.valid }}
+    Form invalid ? {{ myForm.invalid }}
+</div>-->
+
+
