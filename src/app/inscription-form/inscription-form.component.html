@@ -1,46 +1,55 @@
-<div>
-    <label>  
-      Nom :  
-        <input type="text" [formControl]="userName">  
-    </label>  
-</div>
-<div>
-    <label>  
-      Mail:  
-        <input type="text" [formControl]="userEmail">  
-    </label>  
-</div>
-<div>
-    <label>  
-      Mot de passe :  
-        <input type="password" [formControl]="userPassword">  
-    </label>  
-</div>
-<div>
-    <label>  
-      Nom de rue :  
-        <input type="text" [formControl]="userStreet">  
-    </label>  
-</div>
-<div>
-    <label>  
-      Code postal :  
-        <input type="text" [formControl]="userCode">  
-    </label>  
-</div>
-<div>
-    <label>  
-      Ville :  
-        <input type="text" [formControl]="userCity">  
-    </label>  
-</div>
-<div>
-    <button (click)="onSubmit()">Inscription</button>
-</div>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>  
+        Nom :  
+            <input type="text" formControlName="userName">  
+        </label>  
+    </div>
+    <div formGroupName="credentials">
+        <div>
+            <label>  
+            Mail:  
+                <input type="text" formControlName="userEmail">  
+            </label>  
+        </div>
+        <div>
+            <label>  
+            Mot de passe :  
+                <input type="password" formControlName="userPassword">  
+            </label>  
+        </div>
+    </div>
+
+
+    <div>
+        <label>  
+        Nom de rue :  
+            <input type="text" formControlName="userStreet">  
+        </label>  
+    </div>
+    <div>
+        <label>  
+        Code postal :  
+            <input type="text" formControlName="userCode">  
+        </label>  
+    </div>
+    <div>
+        <label>  
+        Ville :  
+            <input type="text" formControlName="userCity">  
+        </label>  
+    </div>
+    <div>
+        <button type="submit" [disabled]="!userForm.valid">Inscription</button>
+    </div>
+</form>
 <div *ngIf="displayUser">
-    <h4>Données du nouvel utilisateur</h4>
-    <p>{{userName.value}}</p>
-    <p>{{userEmail.value}}</p>
-    <p>{{userPassword.value}}</p>
-    <p>{{userStreet.value}}, {{userCode.value}} {{userCity.value}}</p>
+    <h5>Affichage de la propriété Credential (sinon cf le console.log svp)</h5>
+    <p>{{userForm.get('credentials')?.value | json}}</p>
+
+    <h5>Données du nouvel utilisateur</h5>
+    <p>{{user.name}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.password}}</p>
+    <p>{{user.address.street}}, {{user.address.code}} {{user.address.city}}</p>
 </div>
