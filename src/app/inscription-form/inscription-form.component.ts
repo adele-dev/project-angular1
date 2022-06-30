@@ -49,7 +49,7 @@ export class InscriptionFormComponent implements OnInit {
         this.userForm.get("userCity")?.value!,
       )
     );
-    console.log(this.userForm.get("credentials")?.value);
+    console.log(this.userForm.value);
   }
 
 }
