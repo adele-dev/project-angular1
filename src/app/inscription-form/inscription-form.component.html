@@ -10,6 +10,10 @@
             <label>  
             Mail:  
                 <input type="text" formControlName="userEmail">  
+                {{ userForm.get('credentials.userEmail')?.errors?.['email'].rules }}
+                <div *ngIf="userForm.get('credentials.userEmail')?.errors && !userForm.get('credentials.userEmail')?.pristine" class="error-msg">
+                    <div [hidden]="!userForm.get('credentials.userEmail')?.errors?.['required']">password is required.</div>
+                </div>
             </label>  
         </div>
         <div>

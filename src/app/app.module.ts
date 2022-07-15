@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ROUTES } from './app.routes';
+//import { ROUTES } from './app.routes';
 import { InscriptionFormComponent } from './inscription-form/inscription-form.component';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { InscriptionFormComponent } from './inscription-form/inscription-form.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(ROUTES),
+    //RouterModule.forRoot(ROUTES),
     ReactiveFormsModule
   ],
   providers: [],

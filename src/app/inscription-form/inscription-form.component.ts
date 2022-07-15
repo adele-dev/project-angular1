@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { emailValidator } from '../email-validator';
 import { Address } from '../models/address.model';
 import { User } from '../models/user.modele';
 
@@ -23,7 +24,7 @@ export class InscriptionFormComponent implements OnInit {
   userForm = this.formBuild.group({
     userName:[''],
     credentials: this.formBuild.group({
-      userEmail:[''],
+      userEmail:['', [Validators.required, emailValidator]],
       userPassword:[''],
     }),
     userStreet:[''],
